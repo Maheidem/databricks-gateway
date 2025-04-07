@@ -1,11 +1,7 @@
-version: '3.8'
-
 services:
   databricks-gateway:
     build: .
     container_name: databricks-gateway
     ports:
       - "${PORT:-5000}:5000" # Use PORT from .env or default to 5000
-    env_file:
-      - .env # Load environment variables from .env file
     restart: unless-stopped
